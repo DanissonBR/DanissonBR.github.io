@@ -235,7 +235,7 @@
 
     .section-subtitle {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 28px;
     }
 
@@ -260,13 +260,68 @@
       box-shadow: var(--shadow);
     }
 
+    .featured-card {
+      grid-column: 1 / -1;
+      padding: 28px;
+    }
+
     .card h3 {
       margin-top: 0;
       font-size: 21px;
     }
 
+    .featured-card h3 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
     .card p {
       color: var(--muted);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      margin: 14px 0 20px;
+      background: #020617;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0 8px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #020617;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: 0.25s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
     }
 
     .tag-list {
@@ -283,6 +338,45 @@
       background: rgba(96, 165, 250, 0.08);
       padding: 6px 10px;
       border-radius: 999px;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      transition: 0.2s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: var(--shadow);
+    }
+
+    .cert-provider {
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .cert-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .cert-card p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .timeline {
@@ -341,6 +435,26 @@
         grid-template-columns: 1fr;
       }
 
+      .featured-card {
+        grid-column: auto;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 190px;
+      }
+
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
       .nav-links {
         display: none;
       }
@@ -361,6 +475,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -411,8 +526,8 @@
               Internal tools
             </div>
             <div class="stat">
-              <strong>Linux</strong>
-              Servers & labs
+              <strong>HCSP</strong>
+              Huawei presales
             </div>
             <div class="stat">
               <strong>Git</strong>
@@ -439,21 +554,57 @@
       </p>
 
       <div class="grid">
-        <article class="card">
+        <article class="card featured-card">
           <h3>NOC Platform</h3>
+
+          <img
+            src="noc-runtime-overview.png"
+            alt="NOC Platform runtime overview"
+            class="project-image"
+          />
+
           <p>
-            Confidential internal platform built to support NOC operations by centralizing multiple web systems
-            into configurable layouts optimized for monitoring environments.
+            Confidential internal platform built to support Network Operations Center workflows by centralizing
+            multiple web-based systems into configurable layouts optimized for monitoring environments.
           </p>
+
           <p>
-            Due to confidentiality, no source code, real screens, credentials, clients, IPs or sensitive
-            infrastructure details are disclosed.
+            I worked on the admin interface, layout management, desktop runtime, rotation flows,
+            remote access integration and operational automation.
           </p>
+
+          <p>
+            For confidentiality reasons, all screenshots use demo layouts and sanitized data.
+            Source code, real clients, credentials, IP addresses and sensitive infrastructure details are not disclosed.
+          </p>
+
+          <div class="project-gallery">
+            <div class="gallery-item">
+              <img src="noc-monitoring-dashboard.png" alt="NOC monitoring dashboard demo" />
+              <div class="gallery-caption">Monitoring dashboard demo</div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="noc-layout-manager.png" alt="NOC layout manager interface" />
+              <div class="gallery-caption">Layout manager interface</div>
+            </div>
+
+            <div class="gallery-item">
+              <img src="noc-rotation-editor.png" alt="NOC rotation editor interface" />
+              <div class="gallery-caption">Rotation editor workflow</div>
+            </div>
+          </div>
+
           <div class="tag-list">
             <span class="tag">Python</span>
             <span class="tag">FastAPI</span>
             <span class="tag">PySide6</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">VNC / noVNC</span>
             <span class="tag">Automation</span>
+            <span class="tag">Internal Tools</span>
           </div>
         </article>
 
@@ -483,6 +634,60 @@
             <span class="tag">3D Printing</span>
           </div>
         </article>
+
+        <article class="card">
+          <h3>Electronics Projects</h3>
+          <p>
+            Academic and practical engineering projects involving circuits, measurement, digital logic,
+            embedded concepts and troubleshooting.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Electronics</span>
+            <span class="tag">Circuits</span>
+            <span class="tag">Engineering</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications" class="reveal">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">
+        Technical and pre-sales certifications related to networking, security, infrastructure and enterprise solutions.
+      </p>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-provider">Huawei</div>
+          <h3>HCSP-Presales-Campus Network Planning and Design</h3>
+          <p>
+            Certification focused on campus network planning, design and pre-sales solution understanding.
+          </p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-provider">Dahua</div>
+          <h3>Presales 1 & 2</h3>
+          <p>
+            Pre-sales certifications related to Dahua solutions, product positioning and technical solution support.
+          </p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-provider">Dahua</div>
+          <h3>DHSP & DHSE</h3>
+          <p>
+            Dahua technical certifications focused on solution knowledge, security technologies and product ecosystem.
+          </p>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-provider">Extreme Networks</div>
+          <h3>Presales Professional</h3>
+          <p>
+            Pre-sales certification focused on networking solutions, technical positioning and customer-oriented design.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -530,6 +735,9 @@
         <span class="tag">Windows</span>
         <span class="tag">VNC / noVNC</span>
         <span class="tag">Networking</span>
+        <span class="tag">Campus Network</span>
+        <span class="tag">Security Solutions</span>
+        <span class="tag">Technical Pre-Sales</span>
         <span class="tag">Automation</span>
         <span class="tag">Electronics</span>
         <span class="tag">Technical Documentation</span>
@@ -539,12 +747,12 @@
     <section id="contact" class="reveal">
       <h2 class="section-title">Contact</h2>
       <p class="section-subtitle">
-        You can find my work and technical projects on GitHub.
+        You can find my work and technical projects on GitHub or contact me by email.
       </p>
 
       <div class="buttons">
         <a class="btn btn-primary" href="https://github.com/DanissonBR" target="_blank">Open GitHub</a>
-        <a class="btn" href="danissonbrito@outlook.com">Send Email</a>
+        <a class="btn" href="mailto:danissonbrito@outlook.com">Send Email</a>
       </div>
     </section>
   </main>
