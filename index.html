@@ -8,7 +8,6 @@
   <style>
     :root {
       --bg: #0b1120;
-      --bg-soft: #111827;
       --card: rgba(17, 24, 39, 0.78);
       --text: #e5e7eb;
       --muted: #94a3b8;
@@ -239,9 +238,9 @@
       margin-bottom: 28px;
     }
 
-    .grid {
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
@@ -251,50 +250,91 @@
       border-radius: 22px;
       padding: 24px;
       transition: 0.2s ease;
-      min-height: 230px;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: rgba(96, 165, 250, 0.55);
       box-shadow: var(--shadow);
     }
 
-    .featured-card {
-      grid-column: 1 / -1;
-      padding: 28px;
-    }
-
     .card h3 {
       margin-top: 0;
-      font-size: 21px;
-    }
-
-    .featured-card h3 {
-      font-size: 28px;
-      margin-bottom: 14px;
+      font-size: 24px;
     }
 
     .card p {
       color: var(--muted);
     }
 
-    .project-image {
+    .project-thumb {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
-      object-position: top;
+      height: 230px;
+      object-fit: contain;
+      object-position: center;
       border-radius: 18px;
       border: 1px solid var(--border);
-      margin: 14px 0 20px;
       background: #020617;
+      margin: 14px 0 18px;
+      display: block;
     }
 
-    .project-gallery {
+    details {
+      margin-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    summary {
+      cursor: pointer;
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(96, 165, 250, 0.28);
+      color: #bfdbfe;
+      background: rgba(96, 165, 250, 0.08);
+      font-weight: 700;
+      list-style: none;
+      transition: 0.2s ease;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(96, 165, 250, 0.65);
+    }
+
+    details[open] summary {
+      margin-bottom: 18px;
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.6);
+    }
+
+    .detail-block {
+      display: grid;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .detail-image {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: #020617;
+      display: block;
+    }
+
+    .detail-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin: 18px 0 8px;
+      margin-top: 14px;
     }
 
     .gallery-item {
@@ -306,15 +346,11 @@
 
     .gallery-item img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
-      object-position: top;
+      height: 170px;
+      object-fit: contain;
+      object-position: center;
       display: block;
-      transition: 0.25s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.04);
+      background: #020617;
     }
 
     .gallery-caption {
@@ -431,24 +467,16 @@
         min-height: auto;
       }
 
-      .grid {
+      .project-grid {
         grid-template-columns: 1fr;
       }
 
-      .featured-card {
-        grid-column: auto;
-      }
-
-      .project-image {
-        height: 220px;
-      }
-
-      .project-gallery {
+      .detail-gallery {
         grid-template-columns: 1fr;
       }
 
       .gallery-item img {
-        height: 190px;
+        height: 220px;
       }
 
       .cert-grid {
@@ -550,102 +578,265 @@
     <section id="projects" class="reveal">
       <h2 class="section-title">Projects</h2>
       <p class="section-subtitle">
-        A selection of technical projects involving software, infrastructure, automation and engineering.
+        A selection of technical projects involving software, infrastructure, automation, troubleshooting and engineering.
       </p>
 
-      <div class="grid">
-        <article class="card featured-card">
+      <div class="project-grid">
+        <article class="card">
           <h3>NOC Platform</h3>
 
           <img
             src="noc-runtime-overview.png"
             alt="NOC Platform runtime overview"
-            class="project-image"
+            class="project-thumb"
           />
 
           <p>
             Confidential internal platform built to support Network Operations Center workflows by centralizing
-            multiple web-based systems into configurable layouts optimized for monitoring environments.
+            multiple web-based systems into configurable layouts.
           </p>
-
-          <p>
-            I worked on the admin interface, layout management, desktop runtime, rotation flows,
-            remote access integration and operational automation.
-          </p>
-
-          <p>
-            For confidentiality reasons, all screenshots use demo layouts and sanitized data.
-            Source code, real clients, credentials, IP addresses and sensitive infrastructure details are not disclosed.
-          </p>
-
-          <div class="project-gallery">
-            <div class="gallery-item">
-              <img src="noc-monitoring-dashboard.png" alt="NOC monitoring dashboard demo" />
-              <div class="gallery-caption">Monitoring dashboard demo</div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="noc-layout-manager.png" alt="NOC layout manager interface" />
-              <div class="gallery-caption">Layout manager interface</div>
-            </div>
-
-            <div class="gallery-item">
-              <img src="noc-rotation-editor.png" alt="NOC rotation editor interface" />
-              <div class="gallery-caption">Rotation editor workflow</div>
-            </div>
-          </div>
 
           <div class="tag-list">
             <span class="tag">Python</span>
             <span class="tag">FastAPI</span>
             <span class="tag">PySide6</span>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
             <span class="tag">JavaScript</span>
             <span class="tag">VNC / noVNC</span>
-            <span class="tag">Automation</span>
             <span class="tag">Internal Tools</span>
           </div>
+
+          <details>
+            <summary>View details</summary>
+
+            <div class="detail-block">
+              <p>
+                This project was developed in a corporate environment to improve NOC operations.
+                It centralizes multiple systems into configurable layouts optimized for monitoring,
+                presentation and operational workflows.
+              </p>
+
+              <p>
+                I worked on the admin interface, layout management, desktop runtime, rotation flows,
+                remote access integration and operational automation.
+              </p>
+
+              <p>
+                For confidentiality reasons, all screenshots use demo layouts and sanitized data.
+                Source code, real clients, credentials, IP addresses and sensitive infrastructure details are not disclosed.
+              </p>
+
+              <img
+                src="noc-runtime-overview.png"
+                alt="NOC Platform detailed runtime overview"
+                class="detail-image"
+              />
+
+              <div class="detail-gallery">
+                <div class="gallery-item">
+                  <img src="noc-monitoring-dashboard.png" alt="NOC monitoring dashboard demo" />
+                  <div class="gallery-caption">Monitoring dashboard demo</div>
+                </div>
+
+                <div class="gallery-item">
+                  <img src="noc-layout-manager.png" alt="NOC layout manager interface" />
+                  <div class="gallery-caption">Layout manager interface</div>
+                </div>
+
+                <div class="gallery-item">
+                  <img src="noc-rotation-editor.png" alt="NOC rotation editor interface" />
+                  <div class="gallery-caption">Rotation editor workflow</div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card">
+          <h3>Ender 3 Repair & 3D Printing</h3>
+
+          <img
+            src="ender3-dragon-print.png"
+            alt="Ender 3 printing a dragon model"
+            class="project-thumb"
+          />
+
+          <p>
+            Restored a broken Ender 3 through hardware troubleshooting, electrical diagnostics and component-level analysis.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">3D Printing</span>
+            <span class="tag">Troubleshooting</span>
+            <span class="tag">Oscilloscope</span>
+            <span class="tag">Stepper Motors</span>
+            <span class="tag">Hardware Repair</span>
+          </div>
+
+          <details>
+            <summary>View details</summary>
+
+            <div class="detail-block">
+              <p>
+                This project started with a broken Ender 3 3D printer that I received for repair and experimentation.
+                The printer had axis movement failures, so I began by isolating the possible causes.
+              </p>
+
+              <p>
+                I tested the stepper motors to verify if they were still functional, checked whether the power supply
+                was delivering enough energy and analyzed the motion control signals with an oscilloscope.
+              </p>
+
+              <p>
+                After testing the motors and the power supply, I inspected the STEP signals for the motion drivers.
+                The oscilloscope showed abnormal behavior on the X and Y axis signals, which led me to conclude
+                that the X and Y stepper drivers were damaged.
+              </p>
+
+              <p>
+                After the repair process, the project evolved into print calibration, quality improvement and 3D printing workflow experiments.
+              </p>
+
+              <div class="detail-gallery">
+                <div class="gallery-item">
+                  <img src="ender3-repair-setup.png" alt="Ender 3 repair setup" />
+                  <div class="gallery-caption">Repair and diagnostic setup</div>
+                </div>
+
+                <div class="gallery-item">
+                  <img src="ender3-dragon-print.png" alt="Dragon print in progress" />
+                  <div class="gallery-caption">Print test in progress</div>
+                </div>
+
+                <div class="gallery-item">
+                  <img src="ender3-dragon-result.png" alt="Finished dragon print" />
+                  <div class="gallery-caption">Finished print result</div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article class="card">
+          <h3>Digital Logic, Counter & ADC Display</h3>
+
+          <img
+            src="electronics-adc-display.png"
+            alt="Digital logic and ADC display project"
+            class="project-thumb"
+          />
+
+          <p>
+            Breadboard-based electronics setup combining a digital lock, counter logic and an 8-bit ADC display system.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">Digital Logic</span>
+            <span class="tag">CD4017</span>
+            <span class="tag">CD4093</span>
+            <span class="tag">CD4510</span>
+            <span class="tag">8-bit ADC</span>
+            <span class="tag">LCD</span>
+          </div>
+
+          <details>
+            <summary>View details</summary>
+
+            <div class="detail-block">
+              <p>
+                This setup combines three electronics projects into a single prototyping board.
+                The first project is a digital lock based on a CD4017 sequencer.
+              </p>
+
+              <p>
+                The second project is a 0–9 counter using a 4093 logic IC as the clock source and a CD4510 counter.
+                The third project is an 8-bit ADC reading system displayed through an LCD.
+              </p>
+
+              <p>
+                In this setup, the Arduino is not used as the main logic controller.
+                It is mainly used for clock support and to translate the ADC output into readable information on the LCD display.
+                Most of the logic is implemented with discrete digital ICs.
+              </p>
+
+              <img
+                src="electronics-adc-display.png"
+                alt="Electronics ADC display detailed view"
+                class="detail-image"
+              />
+            </div>
+          </details>
+        </article>
+
+        <article class="card">
+          <h3>Motion Detection State Machine</h3>
+
+          <img
+            src="electronics-sensor-lcd.png"
+            alt="Motion detection state machine project"
+            class="project-thumb"
+          />
+
+          <p>
+            State-machine-based access system that detects movement, opens a servo mechanism, counts and re-arms the door logic.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">State Machine</span>
+            <span class="tag">Motion Sensor</span>
+            <span class="tag">Servo Motor</span>
+            <span class="tag">Counter Logic</span>
+            <span class="tag">Automation</span>
+          </div>
+
+          <details>
+            <summary>View details</summary>
+
+            <div class="detail-block">
+              <p>
+                This project simulates an automated access mechanism using a state machine.
+                It detects movement, opens a servo-controlled door, triggers the counter system from the previous electronics project,
+                counts up to 10 and then arms the door again.
+              </p>
+
+              <p>
+                The project integrates sensor input, servo control, counter logic and state transitions,
+                connecting multiple circuit blocks into a more complete automated system.
+              </p>
+
+              <img
+                src="electronics-sensor-lcd.png"
+                alt="Motion detection state machine detailed view"
+                class="detail-image"
+              />
+            </div>
+          </details>
         </article>
 
         <article class="card">
           <h3>Huawei Dorado Labs</h3>
+
           <p>
             Enterprise storage studies and lab activities involving technical validation, documentation
             and practical analysis of storage features.
           </p>
+
           <div class="tag-list">
             <span class="tag">Storage</span>
             <span class="tag">Enterprise IT</span>
             <span class="tag">Documentation</span>
+            <span class="tag">Technical Validation</span>
           </div>
-        </article>
 
-        <article class="card">
-          <h3>3D Printer Automation</h3>
-          <p>
-            Personal project using an Ender 3 with Klipper, Mainsail, Linux and remote monitoring to improve
-            print control, reliability and workflow.
-          </p>
-          <div class="tag-list">
-            <span class="tag">Linux</span>
-            <span class="tag">Klipper</span>
-            <span class="tag">Mainsail</span>
-            <span class="tag">3D Printing</span>
-          </div>
-        </article>
+          <details>
+            <summary>View details</summary>
 
-        <article class="card">
-          <h3>Electronics Projects</h3>
-          <p>
-            Academic and practical engineering projects involving circuits, measurement, digital logic,
-            embedded concepts and troubleshooting.
-          </p>
-          <div class="tag-list">
-            <span class="tag">Electronics</span>
-            <span class="tag">Circuits</span>
-            <span class="tag">Engineering</span>
-          </div>
+            <div class="detail-block">
+              <p>
+                Lab activities focused on enterprise storage concepts, feature validation and technical documentation.
+                The work involved understanding storage resources, testing scenarios and translating technical behavior into clear documentation.
+              </p>
+            </div>
+          </details>
         </article>
       </div>
     </section>
@@ -711,7 +902,7 @@
           <span>Electrical Engineering</span>
           <h3>Academic and hands-on projects</h3>
           <p>
-            Experience with electronics, circuits, measurement, embedded concepts and practical engineering projects.
+            Experience with electronics, circuits, measurement, digital logic, embedded concepts and practical engineering projects.
           </p>
         </div>
       </div>
@@ -740,6 +931,8 @@
         <span class="tag">Technical Pre-Sales</span>
         <span class="tag">Automation</span>
         <span class="tag">Electronics</span>
+        <span class="tag">Oscilloscope</span>
+        <span class="tag">Troubleshooting</span>
         <span class="tag">Technical Documentation</span>
       </div>
     </section>
