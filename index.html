@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danisson Oliveira | Portfolio</title>
+  <title>Danisson Brito | Portfolio</title>
 
   <style>
     :root {
@@ -504,12 +504,44 @@
       border: 1px solid var(--border);
       background: #020617;
       display: block;
-      margin: 20px 0 28px;
+      margin: 20px 0 22px;
+      cursor: zoom-in;
     }
 
-    .case-layout {
+    .case-gallery {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0 26px;
+    }
+
+    .case-gallery-item {
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: #020617;
+    }
+
+    .case-gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      object-position: center;
+      background: #020617;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .case-gallery-caption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-text-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 22px;
       align-items: start;
     }
@@ -526,83 +558,13 @@
       font-size: 22px;
     }
 
-    .case-panel p,
-    .case-panel li {
+    .case-panel p {
       color: var(--muted);
+      margin: 0 0 14px;
     }
 
-    .case-panel ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
-
-    .story-steps {
-      display: grid;
-      gap: 14px;
-    }
-
-    .story-step {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--border);
-    }
-
-    .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(96, 165, 250, 0.14);
-      border: 1px solid rgba(96, 165, 250, 0.36);
-      color: #bfdbfe;
-      font-weight: 800;
-    }
-
-    .story-step h4 {
-      margin: 0 0 4px;
-      font-size: 18px;
-    }
-
-    .story-step p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .case-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .case-gallery-item {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: #020617;
-    }
-
-    .case-gallery-item img {
-      width: 100%;
-      height: 210px;
-      object-fit: contain;
-      object-position: center;
-      background: #020617;
-      display: block;
-      cursor: zoom-in;
-    }
-
-    .case-gallery-caption {
-      padding: 10px 12px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--border);
+    .case-panel p:last-child {
+      margin-bottom: 0;
     }
 
     .lightbox {
@@ -643,7 +605,7 @@
         grid-template-columns: 1fr;
       }
 
-      .case-layout {
+      .case-text-grid {
         grid-template-columns: 1fr;
       }
 
@@ -700,46 +662,39 @@
         </div>
 
         <h1>
-          Hi, I'm <span class="gradient-text">Danisson Oliveira</span>
+          Hi, I'm <span class="gradient-text">Danisson Brito</span>
         </h1>
 
         <p>
-          I work with Python, automation, infrastructure, technical pre-sales and internal tools.
+          I work with Python, electronics, automation, infrastructure, technical pre-sales and internal tools.
           My focus is connecting software, hardware and operations to solve practical problems in real environments.
         </p>
 
         <div class="buttons">
           <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn" href="https://github.com/DanissonBR" target="_blank">GitHub</a>
-          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn" href="https://github.com/DanissonBR" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/danisson-brito/?locale=en-US" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:danissonbrito@outlook.com">Email</a>
         </div>
       </div>
 
       <aside class="profile-card reveal">
         <div class="profile-content">
-          <img class="profile-img" src="https://github.com/DanissonBR.png" alt="Danisson Oliveira profile photo" />
+          <img class="profile-img" src="https://github.com/DanissonBR.png" alt="Danisson Brito profile photo" />
 
-          <h2>Technical builder</h2>
+          <h2>Software, hardware & operations</h2>
           <p>
-            Engineering, infrastructure, automation and operational software.
+            Engineering projects that connect code, circuits, infrastructure and practical troubleshooting.
           </p>
 
           <div class="stats">
             <div class="stat">
               <strong>Python</strong>
-              Backend & automation
+              Backend, tools & automation
             </div>
             <div class="stat">
-              <strong>NOC</strong>
-              Internal tools
-            </div>
-            <div class="stat">
-              <strong>HCSP</strong>
-              Huawei presales
-            </div>
-            <div class="stat">
-              <strong>Git</strong>
-              Version control
+              <strong>Electronics</strong>
+              Circuits & diagnostics
             </div>
           </div>
         </div>
@@ -750,8 +705,8 @@
       <h2 class="section-title">About me</h2>
       <p class="section-subtitle">
         I am an Electrical Engineering student with hands-on experience in technical pre-sales,
-        infrastructure projects, automation, internal software development and troubleshooting.
-        I enjoy building tools that make operations more efficient, organized and reliable.
+        infrastructure projects, automation, internal software development, electronics and troubleshooting.
+        I enjoy building tools and prototypes that make technical work more efficient, organized and reliable.
       </p>
     </section>
 
@@ -785,7 +740,7 @@
           </div>
 
           <div class="project-card-footer">
-            <button class="case-button" data-case="noc">Open case study</button>
+            <button class="case-button" data-case="noc">Open project</button>
           </div>
         </article>
 
@@ -811,7 +766,7 @@
           </div>
 
           <div class="project-card-footer">
-            <button class="case-button" data-case="ender">Open case study</button>
+            <button class="case-button" data-case="ender">Open project</button>
           </div>
         </article>
 
@@ -838,7 +793,7 @@
           </div>
 
           <div class="project-card-footer">
-            <button class="case-button" data-case="adc">Open case study</button>
+            <button class="case-button" data-case="adc">Open project</button>
           </div>
         </article>
 
@@ -864,27 +819,7 @@
           </div>
 
           <div class="project-card-footer">
-            <button class="case-button" data-case="state">Open case study</button>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Huawei Dorado Labs</h3>
-
-          <p>
-            Enterprise storage studies and lab activities involving technical validation, documentation
-            and practical analysis of storage features.
-          </p>
-
-          <div class="tag-list">
-            <span class="tag">Storage</span>
-            <span class="tag">Enterprise IT</span>
-            <span class="tag">Documentation</span>
-            <span class="tag">Technical Validation</span>
-          </div>
-
-          <div class="project-card-footer">
-            <button class="case-button" data-case="dorado">Open case study</button>
+            <button class="case-button" data-case="state">Open project</button>
           </div>
         </article>
       </div>
@@ -980,6 +915,7 @@
         <span class="tag">Technical Pre-Sales</span>
         <span class="tag">Automation</span>
         <span class="tag">Electronics</span>
+        <span class="tag">Digital Logic</span>
         <span class="tag">Oscilloscope</span>
         <span class="tag">Troubleshooting</span>
         <span class="tag">Technical Documentation</span>
@@ -989,23 +925,24 @@
     <section id="contact" class="reveal">
       <h2 class="section-title">Contact</h2>
       <p class="section-subtitle">
-        You can find my work and technical projects on GitHub or contact me by email.
+        You can find my work on GitHub, connect with me on LinkedIn or contact me by email.
       </p>
 
       <div class="buttons">
-        <a class="btn btn-primary" href="https://github.com/DanissonBR" target="_blank">Open GitHub</a>
+        <a class="btn btn-primary" href="https://github.com/DanissonBR" target="_blank" rel="noopener">Open GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/danisson-brito/?locale=en-US" target="_blank" rel="noopener">Open LinkedIn</a>
         <a class="btn" href="mailto:danissonbrito@outlook.com">Send Email</a>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Danisson Oliveira. Built with HTML, CSS and JavaScript.
+    © 2026 Danisson Brito. Built with HTML, CSS and JavaScript.
   </footer>
 
   <div class="modal" id="caseModal" aria-hidden="true">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Close case study">×</button>
+      <button class="modal-close" id="modalClose" aria-label="Close project">×</button>
       <div id="modalBody"></div>
     </div>
   </div>
@@ -1037,32 +974,9 @@
         kicker: "Confidential internal software",
         title: "NOC Platform",
         summary:
-          "A Network Operations Center platform built to centralize multiple web-based systems into configurable layouts, presentation flows and operational views.",
+          "A Network Operations Center platform designed to centralize multiple web-based systems into configurable operational layouts.",
         hero: "assets/images/projects/noc/noc-runtime-overview.png",
         tags: ["Python", "FastAPI", "PySide6", "JavaScript", "VNC / noVNC", "Internal Tools"],
-        overview: [
-          "This project was developed in a corporate environment to improve NOC operations.",
-          "The platform centralizes multiple systems into configurable layouts optimized for monitoring, presentation and operational workflows.",
-          "For confidentiality reasons, all screenshots use demo layouts and sanitized data. Source code, real clients, credentials, IP addresses and sensitive infrastructure details are not disclosed."
-        ],
-        steps: [
-          {
-            title: "Operational problem",
-            text: "The NOC needed a more organized way to display and rotate multiple web systems without constantly switching windows manually."
-          },
-          {
-            title: "My role",
-            text: "I worked on the admin interface, layout management, desktop runtime, rotation flows, remote access integration and operational automation."
-          },
-          {
-            title: "Technical scope",
-            text: "The project involved Python, FastAPI, Jinja-style web interfaces, PySide6/QWebEngineView, JavaScript automation and VNC/noVNC integration."
-          },
-          {
-            title: "Result",
-            text: "The system became a configurable control center for monitoring layouts, presentation mode and operational access."
-          }
-        ],
         gallery: [
           {
             src: "assets/images/projects/noc/noc-monitoring-dashboard.png",
@@ -1076,6 +990,16 @@
             src: "assets/images/projects/noc/noc-rotation-editor.png",
             caption: "Rotation editor workflow"
           }
+        ],
+        contextTitle: "Project context",
+        context: [
+          "This project was developed in a corporate environment to support the daily workflow of a Network Operations Center. The main goal was to reduce the friction of operating multiple web-based tools by centralizing them into a single runtime environment with configurable layouts.",
+          "Instead of switching manually between different browser windows, the operator could use saved layouts, presentation mode and rotation flows to organize monitoring views according to the operational scenario. The screenshots shown here use demo layouts and sanitized data only."
+        ],
+        contributionTitle: "Technical contribution",
+        contribution: [
+          "My work involved the development of the admin interface, layout management flow, desktop runtime behavior, rotation controls, remote access integration and operational automation. The project combined backend work with Python and FastAPI, web interface work with HTML, CSS and JavaScript, and desktop rendering using PySide6/QWebEngineView.",
+          "Because this is proprietary internal software, I do not disclose source code, real client information, credentials, IP addresses, internal URLs or sensitive infrastructure details. The portfolio version focuses only on the technical scope and the type of problems solved."
         ]
       },
 
@@ -1083,32 +1007,9 @@
         kicker: "Hardware troubleshooting",
         title: "Ender 3 Repair & 3D Printing",
         summary:
-          "A broken Ender 3 restored through hardware troubleshooting, electrical diagnostics, motor testing, power supply validation and oscilloscope analysis.",
+          "A broken Ender 3 restored through hardware troubleshooting, electrical diagnostics and component-level analysis.",
         hero: "assets/images/projects/ender3/ender3-dragon-print.png",
         tags: ["3D Printing", "Troubleshooting", "Oscilloscope", "Stepper Motors", "Hardware Repair"],
-        overview: [
-          "This project started with a broken Ender 3 3D printer that I received for repair and experimentation.",
-          "The printer had axis movement failures, so I began by isolating possible causes across the motors, power delivery and control signals.",
-          "After the diagnostic process, the project evolved into print calibration, quality improvement and 3D printing workflow experiments."
-        ],
-        steps: [
-          {
-            title: "Initial failure",
-            text: "The printer powered on, but the axes were not moving correctly, which suggested a possible issue with motors, drivers, power delivery or board signals."
-          },
-          {
-            title: "Isolation tests",
-            text: "I tested the stepper motors to verify if they were still functional and checked whether the power supply was delivering enough energy."
-          },
-          {
-            title: "Signal diagnosis",
-            text: "Using an oscilloscope, I inspected the STEP signals related to the motion drivers and found abnormal behavior on the X and Y axis signals."
-          },
-          {
-            title: "Conclusion",
-            text: "Based on the tests, I concluded that the X and Y stepper drivers were damaged. The repair process later led to calibration and print quality experiments."
-          }
-        ],
         gallery: [
           {
             src: "assets/images/projects/ender3/ender3-repair-setup.png",
@@ -1122,6 +1023,16 @@
             src: "assets/images/projects/ender3/ender3-dragon-result.png",
             caption: "Finished print result"
           }
+        ],
+        contextTitle: "Project context",
+        context: [
+          "This project started when I received a broken Ender 3 3D printer for repair and experimentation. The printer powered on, but the axes were not moving correctly, which required a structured troubleshooting process instead of simply replacing parts at random.",
+          "I began by isolating the possible causes. I tested the stepper motors to verify whether they were still functional, checked if the power supply was delivering enough energy and inspected the control behavior from the mainboard."
+        ],
+        contributionTitle: "Diagnosis and result",
+        contribution: [
+          "The key diagnostic step was analyzing the STEP signals related to the motion drivers with an oscilloscope. After comparing the behavior of the axes, I identified abnormal signal behavior on the X and Y axis drivers, which led me to conclude that those drivers were damaged.",
+          "After the troubleshooting process, the project evolved into printer calibration, print quality experiments and workflow improvements. It became a practical hardware project involving electronics diagnostics, mechanical systems, stepper motor control and 3D printing fundamentals."
         ]
       },
 
@@ -1129,37 +1040,24 @@
         kicker: "Digital electronics",
         title: "Digital Logic, Counter & ADC Display",
         summary:
-          "A breadboard-based electronics setup combining a CD4017 digital lock, 0–9 counter logic and an 8-bit ADC display system.",
+          "A breadboard-based electronics setup combining a digital lock, counter logic and an 8-bit ADC display system.",
         hero: "assets/images/projects/electronics/electronics-adc-display.png",
         tags: ["Digital Logic", "CD4017", "CD4093", "CD4510", "8-bit ADC", "LCD"],
-        overview: [
-          "This setup combines three electronics projects into a single prototyping board.",
-          "The first project is a digital lock based on a CD4017 sequencer. The second is a 0–9 counter using a 4093 logic IC as the clock source and a CD4510 counter. The third project is an 8-bit ADC reading system displayed through an LCD.",
-          "The Arduino is not used as the main logic controller. It mainly supports clocking and translates ADC output into readable LCD information."
-        ],
-        steps: [
-          {
-            title: "Digital lock",
-            text: "A lock logic circuit built around the CD4017 sequencer, focused on understanding digital sequencing behavior."
-          },
-          {
-            title: "Counter stage",
-            text: "A 0–9 counter using a 4093 logic IC as the clock source and a CD4510 counter for the counting logic."
-          },
-          {
-            title: "ADC stage",
-            text: "An 8-bit ADC system whose output is interpreted and displayed on an LCD."
-          },
-          {
-            title: "Arduino role",
-            text: "The Arduino mainly provides support and display translation, while most of the logic remains implemented with discrete digital ICs."
-          }
-        ],
         gallery: [
           {
             src: "assets/images/projects/electronics/electronics-adc-display.png",
             caption: "Combined digital logic, counter and ADC display setup"
           }
+        ],
+        contextTitle: "Project context",
+        context: [
+          "This setup combines three academic electronics projects into a single prototyping board. The first project is a digital lock based on a CD4017 sequencer. The second is a 0–9 counter using a 4093 logic IC as the clock source and a CD4510 counter. The third project is an 8-bit ADC reading system displayed through an LCD.",
+          "The goal of the project was to understand the behavior of digital logic circuits at the hardware level, using discrete ICs instead of relying entirely on software."
+        ],
+        contributionTitle: "Technical implementation",
+        contribution: [
+          "In this project, the Arduino is not used as the main logic controller. It mainly supports clocking and translates the ADC output into readable information on the LCD display. Most of the logic is implemented through discrete digital ICs.",
+          "The project helped reinforce concepts such as sequencing, counting, clock generation, ADC interpretation, LCD visualization and breadboard-level troubleshooting."
         ]
       },
 
@@ -1167,67 +1065,25 @@
         kicker: "Automation and state machines",
         title: "Motion Detection State Machine",
         summary:
-          "A state-machine-based access system that detects movement, opens a servo-controlled mechanism, triggers a counter and re-arms the door logic.",
+          "A state-machine-based access system that detects movement, opens a servo-controlled mechanism, triggers a counter and re-arms the logic.",
         hero: "assets/images/projects/electronics/electronics-sensor-lcd.png",
         tags: ["State Machine", "Motion Sensor", "Servo Motor", "Counter Logic", "Automation"],
-        overview: [
-          "This project simulates an automated access mechanism using a state machine.",
-          "It detects movement, opens a servo-controlled door, triggers the counter system from the previous electronics project, counts up to 10 and then arms the door again.",
-          "The project integrates sensor input, servo control, counter logic and state transitions into a complete automation flow."
-        ],
-        steps: [
-          {
-            title: "Detection",
-            text: "The system detects movement using a motion sensor as the initial trigger for the state machine."
-          },
-          {
-            title: "Action",
-            text: "After detection, the system opens a servo-controlled mechanism to simulate an access door."
-          },
-          {
-            title: "Counting",
-            text: "The circuit triggers the previous counter project and counts up to 10."
-          },
-          {
-            title: "Re-arm",
-            text: "After completing the count, the logic returns to the armed state and waits for a new movement event."
-          }
-        ],
         gallery: [
           {
             src: "assets/images/projects/electronics/electronics-sensor-lcd.png",
             caption: "Motion detection state machine prototype"
           }
+        ],
+        contextTitle: "Project context",
+        context: [
+          "This project simulates an automated access mechanism based on a state machine. The system detects movement, opens a servo-controlled door, triggers the counter circuit from the previous project, counts up to 10 and then arms the door logic again.",
+          "The idea was to connect multiple circuit blocks into a more complete automation flow, combining sensing, actuation, counting and state transitions."
+        ],
+        contributionTitle: "Technical implementation",
+        contribution: [
+          "The project integrates sensor input, servo control, counter logic and automated state transitions. Instead of treating each block as an isolated circuit, the system uses them together as part of a complete operating sequence.",
+          "This project strengthened my understanding of state machines, embedded logic, timing, sensor-based triggering and the practical challenges of integrating different hardware blocks."
         ]
-      },
-
-      dorado: {
-        kicker: "Enterprise infrastructure",
-        title: "Huawei Dorado Labs",
-        summary:
-          "Enterprise storage lab activities focused on feature validation, technical documentation and practical analysis of storage behavior.",
-        hero: "",
-        tags: ["Storage", "Enterprise IT", "Documentation", "Technical Validation"],
-        overview: [
-          "Lab activities focused on enterprise storage concepts, feature validation and technical documentation.",
-          "The work involved understanding storage resources, testing scenarios and translating technical behavior into clear documentation.",
-          "This project strengthened my ability to work with enterprise infrastructure, technical validation and pre-sales documentation."
-        ],
-        steps: [
-          {
-            title: "Study",
-            text: "Understanding storage concepts, product features and enterprise infrastructure scenarios."
-          },
-          {
-            title: "Validation",
-            text: "Testing scenarios and observing the behavior of storage features in lab conditions."
-          },
-          {
-            title: "Documentation",
-            text: "Transforming technical findings into organized material for technical and pre-sales use."
-          }
-        ],
-        gallery: []
       }
     };
 
@@ -1243,18 +1099,6 @@
 
     function renderParagraphs(paragraphs) {
       return paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("");
-    }
-
-    function renderSteps(steps) {
-      return steps.map((step, index) => `
-        <div class="story-step">
-          <div class="step-number">${index + 1}</div>
-          <div>
-            <h4>${step.title}</h4>
-            <p>${step.text}</p>
-          </div>
-        </div>
-      `).join("");
     }
 
     function renderGallery(gallery) {
@@ -1281,10 +1125,6 @@
         return;
       }
 
-      const heroImage = data.hero
-        ? `<img class="case-hero-image" src="${data.hero}" alt="${data.title}" data-full-image="${data.hero}" />`
-        : "";
-
       modalBody.innerHTML = `
         <article class="case-study">
           <div class="case-kicker">${data.kicker}</div>
@@ -1295,23 +1135,21 @@
             ${renderTags(data.tags)}
           </div>
 
-          ${heroImage}
-
-          <div class="case-layout">
-            <div class="case-panel">
-              <h3>Overview</h3>
-              ${renderParagraphs(data.overview)}
-            </div>
-
-            <div class="case-panel">
-              <h3>Storytelling</h3>
-              <div class="story-steps">
-                ${renderSteps(data.steps)}
-              </div>
-            </div>
-          </div>
+          <img class="case-hero-image" src="${data.hero}" alt="${data.title}" data-full-image="${data.hero}" />
 
           ${renderGallery(data.gallery)}
+
+          <div class="case-text-grid">
+            <div class="case-panel">
+              <h3>${data.contextTitle}</h3>
+              ${renderParagraphs(data.context)}
+            </div>
+
+            <div class="case-panel">
+              <h3>${data.contributionTitle}</h3>
+              ${renderParagraphs(data.contribution)}
+            </div>
+          </div>
         </article>
       `;
 
