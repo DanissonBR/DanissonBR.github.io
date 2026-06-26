@@ -1,109 +1,575 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danisson Oliveira | Portfólio</title>
+  <title>Danisson Oliveira | Portfolio</title>
 
   <style>
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111827;
+      --card: rgba(17, 24, 39, 0.78);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-2: #38bdf8;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
       margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 35%),
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.12), transparent 30%),
+        var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
-    main {
-      max-width: 900px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(11, 17, 32, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 48px 24px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 22px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 48px;
+      align-items: center;
+      min-height: 72vh;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.6);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #22c55e;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 8px;
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.95;
+      margin: 0 0 24px;
+      letter-spacing: -0.07em;
     }
 
-    h2 {
-      margin-top: 40px;
-      color: #93c5fd;
+    .gradient-text {
+      background: linear-gradient(135deg, #e5e7eb, #93c5fd, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .subtitle {
-      color: #cbd5e1;
-      font-size: 18px;
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06111f;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .profile-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 28px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    .profile-card h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin: 8px 0 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--accent-2);
+    }
+
+    section {
+      margin-top: 72px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 12px;
-      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      transition: 0.2s ease;
+      min-height: 230px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(96, 165, 250, 0.55);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 16px;
     }
 
-    a {
-      color: #60a5fa;
+    .tag {
+      font-size: 13px;
+      color: #bfdbfe;
+      border: 1px solid rgba(96, 165, 250, 0.22);
+      background: rgba(96, 165, 250, 0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .timeline-item span {
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .timeline-item h3 {
+      margin: 8px 0;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 72px;
+      padding: 28px 24px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .profile-img {
+        width: 130px;
+        height: 130px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <nav>
+      <a href="#" class="logo">Danisson<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <h1>Danisson Oliveira</h1>
-    <p class="subtitle">
-      Estudante de Engenharia Elétrica | Python | Automação | Infraestrutura | Pré-vendas técnicas
-    </p>
+    <section class="hero">
+      <div class="reveal">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Electrical Engineering student building real-world technical solutions
+        </div>
 
-    <h2>Sobre mim</h2>
-    <p>
-      Sou estudante de Engenharia Elétrica com experiência em desenvolvimento de ferramentas internas,
-      automação, infraestrutura, redes e soluções técnicas para ambientes corporativos.
-      Tenho interesse em projetos que conectam software, hardware e operação.
-    </p>
+        <h1>
+          Hi, I'm <span class="gradient-text">Danisson Oliveira</span>
+        </h1>
 
-    <h2>Projetos</h2>
+        <p>
+          I work with Python, automation, infrastructure, technical pre-sales and internal tools.
+          My focus is connecting software, hardware and operations to solve practical problems in real environments.
+        </p>
 
-    <div class="card">
-      <h3>NOC Platform — Software interno confidencial</h3>
-      <p>
-        Plataforma interna desenvolvida para apoiar a operação de um NOC, centralizando múltiplos
-        sistemas web em layouts configuráveis. Atuei no desenvolvimento de interface administrativa,
-        runtime desktop, automações operacionais e melhorias de usabilidade para operação em modo kiosk.
+        <div class="buttons">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn" href="https://github.com/DanissonBR" target="_blank">GitHub</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="profile-card reveal">
+        <div class="profile-content">
+          <img class="profile-img" src="https://github.com/DanissonBR.png" alt="Danisson Oliveira profile photo" />
+
+          <h2>Technical builder</h2>
+          <p>
+            Engineering, infrastructure, automation and operational software.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>Python</strong>
+              Backend & automation
+            </div>
+            <div class="stat">
+              <strong>NOC</strong>
+              Internal tools
+            </div>
+            <div class="stat">
+              <strong>Linux</strong>
+              Servers & labs
+            </div>
+            <div class="stat">
+              <strong>Git</strong>
+              Version control
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="reveal">
+      <h2 class="section-title">About me</h2>
+      <p class="section-subtitle">
+        I am an Electrical Engineering student with hands-on experience in technical pre-sales,
+        infrastructure projects, automation, internal software development and troubleshooting.
+        I enjoy building tools that make operations more efficient, organized and reliable.
       </p>
-      <p>
-        Por se tratar de software proprietário, não exponho código-fonte, telas reais, clientes,
-        credenciais, IPs ou detalhes sensíveis da infraestrutura.
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        A selection of technical projects involving software, infrastructure, automation and engineering.
       </p>
-    </div>
 
-    <div class="card">
-      <h3>Huawei Dorado Labs</h3>
-      <p>
-        Estudos e laboratórios com soluções de storage enterprise, incluindo testes, validações e
-        documentação técnica.
+      <div class="grid">
+        <article class="card">
+          <h3>NOC Platform</h3>
+          <p>
+            Confidential internal platform built to support NOC operations by centralizing multiple web systems
+            into configurable layouts optimized for monitoring environments.
+          </p>
+          <p>
+            Due to confidentiality, no source code, real screens, credentials, clients, IPs or sensitive
+            infrastructure details are disclosed.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PySide6</span>
+            <span class="tag">Automation</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Huawei Dorado Labs</h3>
+          <p>
+            Enterprise storage studies and lab activities involving technical validation, documentation
+            and practical analysis of storage features.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Storage</span>
+            <span class="tag">Enterprise IT</span>
+            <span class="tag">Documentation</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>3D Printer Automation</h3>
+          <p>
+            Personal project using an Ender 3 with Klipper, Mainsail, Linux and remote monitoring to improve
+            print control, reliability and workflow.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Linux</span>
+            <span class="tag">Klipper</span>
+            <span class="tag">Mainsail</span>
+            <span class="tag">3D Printing</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">
+        Practical experience with technical environments, internal systems and infrastructure-related projects.
       </p>
-    </div>
 
-    <div class="card">
-      <h3>Automação com Impressora 3D</h3>
-      <p>
-        Projeto pessoal envolvendo Ender 3, Klipper, Mainsail, Linux, monitoramento remoto e melhorias
-        no processo de impressão 3D.
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>Technical Pre-Sales / Internal Tools</span>
+          <h3>Corporate technical projects</h3>
+          <p>
+            Worked on technical documentation, infrastructure support, solution analysis and development
+            of internal tools to improve operational workflows.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span>Electrical Engineering</span>
+          <h3>Academic and hands-on projects</h3>
+          <p>
+            Experience with electronics, circuits, measurement, embedded concepts and practical engineering projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">
+        Technologies and areas I have worked with or studied through real projects.
       </p>
-    </div>
 
-    <h2>Tecnologias</h2>
-    <p>
-      Python, FastAPI, HTML, CSS, JavaScript, Git, GitHub, Linux, Windows, VNC/noVNC, redes,
-      automação e eletrônica.
-    </p>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Windows</span>
+        <span class="tag">VNC / noVNC</span>
+        <span class="tag">Networking</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Electronics</span>
+        <span class="tag">Technical Documentation</span>
+      </div>
+    </section>
 
-    <h2>Contato</h2>
-    <p>
-      GitHub: <a href="https://github.com/DanissonBR">github.com/DanissonBR</a>
-    </p>
+    <section id="contact" class="reveal">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        You can find my work and technical projects on GitHub.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://github.com/DanissonBR" target="_blank">Open GitHub</a>
+        <a class="btn" href="danissonbrito@outlook.com">Send Email</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    © 2026 Danisson Oliveira. Built with HTML, CSS and JavaScript.
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      for (const element of revealElements) {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 90;
+
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add("active");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
 </body>
 </html>
